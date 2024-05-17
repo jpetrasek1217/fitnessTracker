@@ -18,6 +18,8 @@ import { PastTrainingsComponent } from './training/past-trainings/past-trainings
 import { WelcomeComponent } from './welcome/welcome.component';
 import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
 import { HeaderComponent } from './navigation/header/header.component';
+import { StopTrainingComponent } from './training/current-training/stop-training/stop-training.component';
+import { AuthService } from './auth/auth.service';
 
 
 @NgModule({
@@ -31,7 +33,8 @@ import { HeaderComponent } from './navigation/header/header.component';
     PastTrainingsComponent,
     WelcomeComponent,
     SidenavListComponent,
-    HeaderComponent
+    HeaderComponent,
+    StopTrainingComponent
   ],
   imports: [
     BrowserModule,
@@ -43,8 +46,9 @@ import { HeaderComponent } from './navigation/header/header.component';
   ],
   providers: [
     provideClientHydration(),
-    provideAnimationsAsync()
+    provideAnimationsAsync(),
+    AuthService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
